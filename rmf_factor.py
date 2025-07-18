@@ -21,7 +21,7 @@ def rmf_factor(n):
             return y, n // y
 
         # Зменшений і обмежений адаптивний крок
-        if z > z_prev and z < z_next:
+        if z < z_prev and z < z_next:
             skip = 2  # мінімальний, безпечний стрибок
             y -= skip
         else:
