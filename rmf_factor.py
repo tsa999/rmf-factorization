@@ -23,7 +23,7 @@ def rmf_factor(n):
             return y, n // y
 
         # ⚡ Евристика: якщо z — локальний максимум, пропускаємо декілька y
-        if z > z_prev and z > z_next:
+        if z > z_prev and z < z_next:
             skip = int(math.sqrt(z))  # адаптивний крок
             y -= skip  # пропускаємо вперед
         else:
