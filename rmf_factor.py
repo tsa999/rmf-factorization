@@ -37,5 +37,3 @@ def rmf_factor(n):
 n = 10004983 * 10004719
 result = rmf_factor(n)
 print("Result:", result)
-
-
