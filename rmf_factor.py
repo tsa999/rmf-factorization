@@ -1,39 +1,20 @@
 import time
 import math
-
-def rmf_factor(n):
-    """
-    Евристичний алгоритм розкладання числа на множники.
-    Пропускає дільники, якщо бачить локальний максимум залишку.
-    """
+def factor(n):
+    zp = 0
     y_max = math.isqrt(n) + 1
-    z_prev = n
     t0 = time.time()
-    y = y_max
-
-    while y > 2:
+    for y in range(y_max, 1, -1):
         z = n % y
-        y_next = y - 1
-        z_next = n % y_next if y_next > 1 else n
-
         if z == 0:
-            print(f"Знайдено дільник: {y}")
-            return y, n // y
-
-        # Зменшений і обмежений адаптивний крок
-        if z < z_prev and z < z_next:
-            skip = 2  # мінімальний, безпечний стрибок
-            y -= skip
-        else:
-            y -= 1
-
-        z_prev = z
-
+             print(f"Знайдено дільник: {y}")
+             zp = 1
+        y -= 1
     t1 = time.time()
-    print(f"Число просте. Час: {t1 - t0:.2f} сек")
-    return None
-
-# Тест на складеному числі
-n = 10004983 * 10004719
-result = rmf_factor(n)
+    if zp == 0:
+        print(f"Число просте. Час факторизації: {t1 - t0:.2f} сек")
+        return None
+# Тест
+n = 9361973132609
+result = factor(n)
 print("Result:", result)
