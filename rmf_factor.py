@@ -16,6 +16,6 @@ def factor(n):
         return f"Час факторизації: {t1 - t0:.2f} сек"
 
 # Тест
-n = 9361973132609  # 3 × 3 × 10402192484 × 10402192484
+n = 9361973132609 
 result = factor(n)
 print("Result:", n, result)
