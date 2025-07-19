@@ -12,9 +12,8 @@ def factor(n):
         y -= 1
     t1 = time.time()
     if zp == 0:
-        print(f"Число просте. Час факторизації: {t1 - t0:.2f} сек")
-        return None
+        return f"Число просте. Час факторизації: {t1 - t0:.2f} сек"
 # Тест
 n = 9361973132609
 result = factor(n)
-print("Result:", result)
+print("Result:",n, result)
